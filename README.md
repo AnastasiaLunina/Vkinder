@@ -6,7 +6,7 @@ It is a team project, built as a class project.
 
 ### Goal
 
-Goal is to write a script for a chat-bot to interact with databease of social media network Vkontakte. 
+Goal is to write a script for a chat-bot which will be interacting with databease of social media network Vkontakte. 
 Bot will offer different choices od random matches built as a dialoge with the user.
 
 ### Instruction
