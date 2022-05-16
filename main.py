@@ -51,21 +51,21 @@ def main():
         nonlocal flag_favorite
         nonlocal flag_black
         if not stack or (flag_list and not flag_favorite):
-            vk_bot.send_msg(event.user_id, "Добавлять некого")
+            vk_bot.send_msg(event.user_id, "Nothing to add")
             return False
         elif not stack or (not flag_list is None and not flag_black):
-            vk_bot.send_msg(event.user_id, "Добавлять некого")
+            vk_bot.send_msg(event.user_id, "Nothing to add")
             return False
         first_name, last_name, url, user_attachment = stack.pop()
         vk_user_id = int(url.split('id')[1])
         if flag_list and models.check_if_match_exists(vk_user_id)[0] is None:
-            print('1')
+            vk_bot.send_msg(event.user_id, "Added to favorites")
             flag_favorite = False
             models.add_new_match_to_favorites(vk_user_id, bot_user_id, first_name, last_name, url)
             models.add_photo_of_the_match(user_attachment, vk_user_id)
             return True
         elif not flag_list and models.check_if_match_exists(vk_user_id)[1] is None:
-            print('2')
+            vk_bot.send_msg(event.user_id, "Added to black list")
             flag_black = False
             models.add_new_match_to_black_list(vk_user_id, bot_user_id, first_name, last_name, url)
             models.add_photo_of_the_match(user_attachment, vk_user_id)
@@ -76,28 +76,29 @@ def main():
         if event.type == VkEventType.MESSAGE_NEW:
             if event.to_me:
                 message = event.text.lower()
-                if message == "привет":
-                    vk_bot.send_msg(event.user_id, 'Привет, для начала работы нажми кнопку "Показать"')
-                elif message == "список избранных":
+                if message == "hello":
+                    vk_bot.send_msg(event.user_id, 'Hello, press button "Show" to start')
+                elif message == "favorites list":
                     for user in models.show_all_favorites(event.user_id):
                         msg = f'{user[0]} {user[1]}\n{user[2]}'
                         vk_bot.send_msg(event.user_id, message=msg, attachment=user[3])
-                elif message == "черный список":
+                elif message == "black list":
                     for user in models.show_all_blacklisted(event.user_id):
                         msg = f'{user[0]} {user[1]}\n{user[2]}'
                         vk_bot.send_msg(event.user_id, message=msg, attachment=user[3])
-                elif message == "добавить в избранное":
+                elif message == "add to favorites":
                     add_user_to_db(event.user_id, True)
-                elif message == "не нравится":
+                elif message == "no, thank you":
                     add_user_to_db(event.user_id, False)
-                elif message == "показать":
+                elif message == "show":
                     data = get_user_for_bot(event.user_id)
                     msg = f'{data[0]} {data[1]}\n{data[2]}'
                     stack.append(data)
                     vk_bot.send_msg(event.user_id, message=msg, attachment=data[3])
                     flag_favorite, flag_black = True, True
                 else:
-                    vk_bot.send_msg(event.user_id, "К сожалению, такой команды я не знаю")
+                    vk_bot.send_msg(event.user_id, "Unfortunately I don't know this command")
+
 
 if __name__ == '__main__':
     main()

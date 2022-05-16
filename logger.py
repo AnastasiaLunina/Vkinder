@@ -9,11 +9,11 @@ def logger(file_name):
             start = time.time()
             result = out_func(*args, **kwargs)
             path = f'{os.getcwd()}/{file_name}'
-            data = f'--- Имя функции: {out_func.__name__}, ' \
-                   f'Аргументы функции: {args} {kwargs}, ' \
-                   f'Дата вызова: {datetime.date.today()}, ' \
-                   f'Время выполнения: {time.time() - start}, ' \
-                   f'Результат выполнения: {result}'
+            data = f'--- Function name: {out_func.__name__}, ' \
+                   f'Arguments: {args} {kwargs}, ' \
+                   f'Calling date: {datetime.date.today()}, ' \
+                   f'Time: {time.time() - start}, ' \
+                   f'Result: {result}'
             with open(path, 'a', encoding='utf-8') as f:
                 f.write(data + '\n')
             return result

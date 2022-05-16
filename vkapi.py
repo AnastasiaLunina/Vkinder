@@ -45,10 +45,10 @@ class VkApi:
                 raise ConnectionError
         except ConnectionError:
             logger.error_func(response.json())
-            print('Ошибка при получении кода')
+            print('Error')
         else:
             webbrowser.open(response.url)
-            code = input('Введите код с браузера: ').split('code=')[1]
+            code = input('Please enter the code from browser: ').split('code=')[1]
             return code
 
     def _access_token(self):
@@ -65,7 +65,7 @@ class VkApi:
                 raise ConnectionError
         except ConnectionError:
             logger.error_func(response.json())
-            print('Ошибка при получении токена')
+            print('Error')
         else:
             with open('token.txt', 'w', encoding='utf-8') as file:
                 file.write(response.json()['access_token'])

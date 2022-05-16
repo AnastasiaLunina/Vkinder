@@ -37,11 +37,11 @@ class VKBot:
         :return Keyboard JSON-object
         """
         keyboard = VkKeyboard(one_time=False)
-        keyboard.add_button('Показать', color=VkKeyboardColor.PRIMARY)
+        keyboard.add_button('Show', color=VkKeyboardColor.PRIMARY)
         keyboard.add_line()
-        keyboard.add_button('Добавить в избранное', color=VkKeyboardColor.POSITIVE)
-        keyboard.add_button('Не нравится', color=VkKeyboardColor.NEGATIVE)
+        keyboard.add_button('Add to favorites', color=VkKeyboardColor.POSITIVE)
+        keyboard.add_button('No, thank you', color=VkKeyboardColor.NEGATIVE)
         keyboard.add_line()
-        keyboard.add_button('Список избранных', color=VkKeyboardColor.SECONDARY)
-        keyboard.add_button('Черный список', color=VkKeyboardColor.SECONDARY)
+        keyboard.add_button('Favorites list', color=VkKeyboardColor.SECONDARY)
+        keyboard.add_button('Black list', color=VkKeyboardColor.SECONDARY)
         return keyboard.get_keyboard()

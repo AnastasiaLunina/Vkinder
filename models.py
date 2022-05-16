@@ -10,7 +10,7 @@ Creating a database tables in accordance with a flowchart
 Base = declarative_base()
 
 # an Engine, which the Session will use for connection
-engine = sql.create_engine("postgresql://postgres:4Fabregas15@localhost:5432/vKinder_bot_db")
+engine = sql.create_engine("postgresql://postgres:Mimishka20@localhost:5432/vKinder_bot_db")
 
 # create a configured "Session" class
 Session = sessionmaker(bind=engine)
