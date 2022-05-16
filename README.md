@@ -28,13 +28,13 @@ You need to write the program with following conditions:
 
  ### How To:
 
-1. Install requirements from file `requirements.txt`. with the folloeing command `pip install -r requirements.txt`.
+1. Install requirements from file `requirements.txt`. with the following command `pip install -r requirements.txt`.
 2. Go to main.py and run the file.
 3. In modules.py you need to change your password, instead of YOURPASSWORD should be your unique password to create a database. 
 For this bot we used PosеgreSQL и PgAdmin. After that run the script module.py, database will be created.
 5. To chat with the bot, follow the link [VKinder](https://vk.com/im?media=&sel=-213024441&v=)
-6. To activate the bot write the message "привет".
-7. When you press button "Показать" the results chosen according to algorithm from the initial task will be shown. Bot will choose profiles of the people opposite geneder to yours, from the same city and the same age as a bot user. In case city information is missing, Moscow is used by default.
-7. When user press button "Добавить в избранное" profile is added to database table favorites list. User have an option to review favorites list by pressing button "Список избранных".
-8.  When user presses the button "Не нравится" profile is added to database table black list. User have an option to review favorites list by pressing button "Черный список".
+6. To activate the bot write the message "hello".
+7. When you press button "Show" the results chosen according to algorithm from the initial task will be shown. Bot will choose profiles of the people opposite gender to yours, from the same city and the same age as a bot user. In case city information is missing, Moscow is used by default.
+7. When user press button "Add to favorites" profile is added to database table favorites list. User have an option to review favorites list by pressing button "Favorites list".
+8.  When user presses the button "No, thank you" profile is added to database table black list. User have an option to review favorites list by pressing button "Black list".
 
