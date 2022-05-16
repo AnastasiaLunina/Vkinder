@@ -38,3 +38,9 @@ For this bot we used PosеgreSQL и PgAdmin. After that run the script module.py
 7. When user press button "Add to favorites" profile is added to database table favorites list. User have an option to review favorites list by pressing button "Favorites list".
 8.  When user presses the button "No, thank you" profile is added to database table black list. User have an option to review favorites list by pressing button "Black list".
 
+### Result:
+
+There were profiles in my blacklist and favorites list which I added while testing the App, that is the reason the bot shows everyone in those lists.
+
+![](vkinder_.gif)
+
