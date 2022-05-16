@@ -1,48 +1,40 @@
 <img  src="https://cdn.glitch.global/5045ed4d-89cd-4f64-80ba-25a2c76b94b7/bot.png?v=1651674003202"  alt="logo">
 
-# [VKinder](https://vk.com/public213024441 "Сообщество VKinder")  чат-бот ВКонтакте
+# [VKinder](https://vk.com/public213024441 "Сообщество VKinder") chat-bot for Vkontakte App
 
-### Цель проекта
+It is a team project, built as a class project.
 
-Цель командного проекта - разработать программу-бота для взаимодействия с базами данных социальной сети. Бот будет предлагать различные варианты людей для знакомств в социальной сети Вконтакте в виде диалога с пользователем.
+### Goal
 
-### Инструкция к работе над проектом
+Goal is to write a script for a chat-bot to interact with databease of social media network Vkontakte. 
+Bot will offer different choices od random matches built as a dialoge with the user.
 
-Необходимо разработать программу-бота, которая должна выполнять следующие действия:
-1. Используя информацию (возраст, пол, город) о пользователе, который общается с пользователем в ВК, сделать поиск других людей (других пользователей ВК) для знакомств.
-2. У тех людей, которые подошли под критерии поиска, получить три самые популярные фотографии в профиле. Популярность определяется по количеству лайков.
-3. Выводить в чат с ботом информацию о пользователе в формате:
+### Instruction
+
+You need to write the program with following conditions:
+1. Using the information about the user of the bot (gender, age and city) find matching people for that user.
+2. For those matches you need to get three most popular pictures, which you can determine by the amount of likes.
+3. Return the information about the matching use in following format:
 
 ```
- Имя Фамилия
- ссылка на профиль
- три фотографии в виде attachment(https://dev.vk.com/method/messages.send)
+ First_name Last_name
+ profile URL
+ three pictures as an attachments (https://dev.vk.com/method/messages.send)
 ```
 
-4. Должна быть возможность перейти к следующему человеку с помощью команды или кнопки.
-5. Сохранить пользователя в список избранных.
-6. Вывести список избранных людей.
+4. Should be a possibility to go to the next person, with the button or with a command.
+5. Save favorite matches to favorites list.
+6. Return favorites list.
 
- ### Настройка бота
+ ### How To:
 
-1. Установить зависимости из файла `requirements.txt`. С помощью команды `pip install -r requirements.txt`.
-2. Перейдите в main.py, основная для работы с ботом.  Запустите бота.
-3. В modules.py необходимо изменить пароль, вместо YOURPASSWORD должен быть Ваш пароль для создания базы данных. Для данного бота использовался PosеgreSQL и PgAdmin. После чего необходимо запустить скрипт module.py, база данных будет создана.
-4. Чтобы перейти к диалогу с ботом, необходимо перейти по ссылке [VKinder](https://vk.com/im?media=&sel=-213024441&v=)
-5. Для активации бота написать сообщение "привет".
-6. При нажатии кнопки "Показать" будут выданы результаты, которые соответсвуют прописанному, согласно инструкциям, алгоритму.
-Бот выбирает анкеты людей противоположного Вам пола, из Вашего города, одного и того же с Вами возраста. В случае, если у пользователя бота отсутствует информация о городе, по умолчанию используется город Москва.
-7. При нажатии кнопки "Добавить в избранное" анкета записывается в базу данных, в список избранных. Просмотреть все избранные анкеты можно при нажатии кнопки "Список избранных".
-8. При нажатии кнопки "Не нравится" анкета записывается в базу данных, в черный список. Просмотреть все анкеты из черного списка можно при нажатии кнопки "Черный список".
+1. Install requirements from file `requirements.txt`. with the folloeing command `pip install -r requirements.txt`.
+2. Go to main.py and run the file.
+3. In modules.py you need to change your password, instead of YOURPASSWORD should be your unique password to create a database. 
+For this bot we used PosеgreSQL и PgAdmin. After that run the script module.py, database will be created.
+5. To chat with the bot, folloe the link [VKinder](https://vk.com/im?media=&sel=-213024441&v=)
+6. To activate the bot write the message "привет".
+7. When you press button "Показать" the results chosen according to algorythm from the initial task will be shown. Bot will choose profiles of the people opposite geneder, from the same city and the same age as a bot user. In case city information is missing, Moscow is used by default.
+7. When user press button "Добавить в избранное" profile is added to database table favorites list. User have an option to review favorites list by pressing button "Список избранных".
+8.  When user press button "Не нравится" profile is added to database table black list. User have an option to review favorites list by pressing button "Черный список".
 
-
-### Дополнительные требования к проекту (необязательные для получения зачёта)
-
-1. Получать токен от пользователя с нужными правами.
-2. Добавлять человека в чёрный список, чтобы он больше не попадался при поиске, используя БД.
-3. Создать кнопки в чате для взаимодействия с ботом.
-4. Добавить возможность ставить/убирать лайк выбранной фотографии.
-5. К списку фотографий из аватарок добавлять список фотографий, где отмечен пользователь.
-6. В ВК максимальная выдача при поиске - 1000 человек. Подумать, как это ограничение можно обойти.
-7. Можно усложнить поиск, добавив поиск по интересам. Разбор похожих интересов (группы, книги, музыка, интересы) нужно будет провести с помощью анализа текста.
-8. У каждого критерия поиска должны быть свои веса, то есть совпадение по возрасту должно быть важнее общих групп, интересы по музыке - важнее книг, наличие общих друзей - важнее возраста и т.д.
