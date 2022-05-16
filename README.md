@@ -7,14 +7,14 @@ It is a team project, built as a class project.
 ### Goal
 
 Goal is to write a script for a chat-bot which will be interacting with databease of social media network Vkontakte. 
-Bot will offer different choices od random matches built as a dialoge with the user.
+Bot will offer different choices od random matches built as a dialogue with the user.
 
-### Instruction
+### Instructions
 
 You need to write the program with following conditions:
-1. Using the information about the user of the bot (gender, age and city) find matching people for that user.
+1. Using the information about the user of the bot (gender, age and city) find matching people.
 2. For those matches you need to get three most popular pictures, which you can determine by the amount of likes.
-3. Return the information about the matching use in following format:
+3. Return the information about the matching accounts in following format:
 
 ```
  First_name Last_name
@@ -32,9 +32,9 @@ You need to write the program with following conditions:
 2. Go to main.py and run the file.
 3. In modules.py you need to change your password, instead of YOURPASSWORD should be your unique password to create a database. 
 For this bot we used PosеgreSQL и PgAdmin. After that run the script module.py, database will be created.
-5. To chat with the bot, folloe the link [VKinder](https://vk.com/im?media=&sel=-213024441&v=)
+5. To chat with the bot, follow the link [VKinder](https://vk.com/im?media=&sel=-213024441&v=)
 6. To activate the bot write the message "привет".
-7. When you press button "Показать" the results chosen according to algorythm from the initial task will be shown. Bot will choose profiles of the people opposite geneder, from the same city and the same age as a bot user. In case city information is missing, Moscow is used by default.
+7. When you press button "Показать" the results chosen according to algorithm from the initial task will be shown. Bot will choose profiles of the people opposite geneder to yours, from the same city and the same age as a bot user. In case city information is missing, Moscow is used by default.
 7. When user press button "Добавить в избранное" profile is added to database table favorites list. User have an option to review favorites list by pressing button "Список избранных".
-8.  When user press button "Не нравится" profile is added to database table black list. User have an option to review favorites list by pressing button "Черный список".
+8.  When user presses the button "Не нравится" profile is added to database table black list. User have an option to review favorites list by pressing button "Черный список".
 
